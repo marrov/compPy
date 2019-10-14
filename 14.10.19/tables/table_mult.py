@@ -23,4 +23,5 @@ def get_all_tables():
     return d
 
 
-print(get_all_tables())
+# d = get_all_tables()
+# print(d)
