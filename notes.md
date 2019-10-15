@@ -11,3 +11,18 @@
 - Variable definitions inside a function cannot be seen from outside i.e. variables within a function have their function as their scope
 
 - In python3 the order of the dictionary entries are preserved from when they where created
+
+## Tuesday 15.10.2019
+
+- Testing is tedious but worth it in the long run. It also enforces progamming in smaller chunks.
+
+- "-m" flag searches for the module given directly afterwards
+
+- Make pyhton environmnets with "python3 -m venv myenv" for installing specialised packages without affecting the main installation. 
+    - Activate these new environmnets with "source myenv/bin/activate"
+
+- pytest is superior to nosetest for python code testing
+
+- "%" computes remainder after division
+
+- "//" computes integer divison. 
