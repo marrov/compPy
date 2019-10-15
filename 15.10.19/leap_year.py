@@ -1,15 +1,7 @@
 def is_leap_year(year):
 
-    # Check century
     if year % 100 == 0:
         century = year // 100
-        if century % 4 == 0:
-            return True
-        else:
-            return False
+        return century % 4 == 0
     else:
-        # Check year
-        if year % 4 == 0:
-            return True
-        else:
-            return False
+        return year % 4 == 0

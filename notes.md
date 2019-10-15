@@ -14,7 +14,7 @@
 
 ## Tuesday 15.10.2019
 
-- Testing is tedious but worth it in the long run. It also enforces progamming in smaller chunks.
+- Testing is tedious but worth it in the long run. It also enforces progamming in smaller chunks!
 
 - "-m" flag searches for the module given directly afterwards
 
@@ -23,6 +23,14 @@
 
 - pytest is superior to nosetest for python code testing
 
-- "%" computes remainder after division
+- These two operators are useful and complementary:
+    - "%" computes remainder after division
+    - "//" computes integer divison. 
 
-- "//" computes integer divison. 
+- "Refactoring" in coding implies shortening and making a code more legible or prettier without modifying the implementation. It is a usual second step after first implementation.
+
+- pytest fixtures can help with testing
+
+- "f strings" converts expressions with more complex variables into a string. Introduced in python3.6. Makes string outputs easier to read.
+
+- Phylosophy: write tests before code!
