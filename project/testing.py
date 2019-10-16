@@ -1,35 +1,59 @@
 import pandas as pd
 
-s = pd.Series(range(4), index=['a', 'b', 'c', 'd'])
-
-
-def read_log(dir):
-    idx = 0
+def read_log_list(dir):
+    """
+    Reads log files at given directory and returns relevant time data in list
+    """
+    data=[]
     with open(dir, 'r') as reader:
         for line in reader:
-            # Discard first line
-            if idx != 0:
-                # Define strings which signal the function and the time
-                str_func = '...'
-                str_time = 'Done in '
-
-                # Extract the function and time based on the strings above
+            # Define strings which signal the function and the time
+            str_func = '...'
+            str_time = 'Done in '
+            # If line includes the strings write function and time in data
+            if str_func in line and str_time in line:
+                # Extract function and time based on the strings above
                 lin_func = line[0:line.find(str_func)]
                 lin_time = line[line.find(str_time)+len(str_time):-3]
-
-                # If strings are not empty write function and time in data
-                if not lin_func and not lin_time:
-                    pass
-                else:
-                    data = [lin_func, lin_time]
-            idx += 1
+                # Append to list
+                data.append([lin_func, lin_time])
     return data
 
-# YOU ARE OVERRRIDING DATA!!!
+
+def read_log_dict(dir):
+    """
+    Reads log files at given directory and returns relevant time data in dictionary
+    """
+    data = {'function':[],'time':[]}
+    func = []
+    time = []
+    with open(dir, 'r') as reader:
+        for line in reader:
+            # Define strings which signal the function and the time
+            str_func = '...'
+            str_time = 'Done in '
+            # If line includes the strings write function and time in data
+            if str_func in line and str_time in line:
+                # Extract function and time based on the strings above
+                func.append(line[0:line.find(str_func)])
+                time.append(float(line[line.find(str_time)+len(str_time):-3]))
+    data = dict(zip(func, time))
+    return data
+
+# OK I GOT IT!!! MAKE TO FUNCS
+# 1) READ_LOG_KEYS which reads the funcs
+# 2) READ_LOG_VALS which reads the times, which get concatenated
 
 # Define directory for log files
-dir = 'project/logs/log.run_np_1'
+dir1 = 'project/logs/log.run_np_1'
+dir2 = 'project/logs/log.run_np_2'
 
-data = read_log(dir)
+d1 = read_log_dict(dir1)
+d2 = read_log_dict(dir2)
 
-print(data)
+z = {**d1, **d2}
+
+#df = pd.DataFrame(data=d1)
+#df = pd.DataFrame(data=d['time'],index=d['function'])
+
+print(z)
