@@ -57,7 +57,9 @@
  ## Wednesday 16.10.2019
 
  - To modify an input for file creation:
-    - Generate the input string with `in_file="""input {value}"""`
-    - Then the magnitude of `{value}` can be changed on creation with something like `with open('file.dat','w') as f:` followed by `f.write(in_file.format(value=0.1))`. This generates file.dat substituting the `{value}` by the magnitude 0.1
+    - Generate the input string with `in_file="""input {value}"""`.
+    - Then the magnitude of `{value}` can be changed on creation with something like `with open('file.dat','w') as f:` followed by `f.write(in_file.format(value=0.1))`. This generates file.dat substituting the `{value}` by the magnitude 0.1.
 
-- Use `subprocess.run(['command1','command2'])` to run different commands in the shell through python. 
+- Use `subprocess.run(['command1','command2'])` to run different commands in the shell through python.
+
+- Pandas (np for short) is relevant for database generation and manipulation. Main variables types are np.series (1D) and np.DataFrame (2D).
