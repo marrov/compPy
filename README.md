@@ -63,3 +63,9 @@
 - Use `subprocess.run(['command1','command2'])` to run different commands in the shell through python.
 
 - Pandas (np for short) is relevant for database generation and manipulation. Main variables types are np.series (1D) and np.DataFrame (2D).
+
+ ## Thursday 17.10.2019
+
+ - pdb and pydb two different python debuggers but the standard pdb is "good enough".
+
+ - Review the topic of iterators as they can be relevant.
